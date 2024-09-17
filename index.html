@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LTR Incident Counter</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: #f0f0f0;
+            }
+            .container {
+                position: relative;
+                display: inline-block;
+            }
+            .container img {
+                width: 500px;
+            }
+            .number {
+                position: absolute;
+                top: 99px;
+                left: 106px;
+                font-size: 35px;
+                font-weight: bold;
+                color: red;
+                background-color: #d3d3d3;
+                padding: 9px;
+                padding-top: 1px;
+                padding-bottom: 1px;
+            }
+        </style>
+    </head>
+    <body>
+
+    <div class="container">
+        <img src="image.png" alt="LTR Incident Sign">
+        <div id="counter" class="number">0</div>
+    </div>
+
+    <script>
+        const lastIncidentDate = new Date("2024-09-09"); 
+        const currentDate = new Date();
+        const diffTime = Math.abs(currentDate - lastIncidentDate);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+        document.getElementById("counter").innerText = diffDays;
+    </script>
+
+    </body>
+</html>
